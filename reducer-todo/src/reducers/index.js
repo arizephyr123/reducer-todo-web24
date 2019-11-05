@@ -1,0 +1,15 @@
+import React from 'react';
+
+export const InitialState = {
+    item: 'Learn about reducers',
+    completed: false,
+    id: 3892987589
+  };
+
+  export const Reducer = (state, action) => {
+switch(action.type){
+  default:
+    return state
+}
+  }; 
+
