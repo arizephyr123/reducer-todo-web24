@@ -1,4 +1,3 @@
-import React from "react";
 import { ADD_TODO, TOGGLE_COMPLETED, CLEAR_COMPLETED } from "../actions";
 
 export const initialState = {
@@ -24,15 +23,8 @@ export function reducer(state, action) {
       };
 
     case TOGGLE_COMPLETED:
-      //console.log('in TOGGLE_COMPLETED-action.payload', action.payload);
       return {
         todos: state.todos.map(todo => {
-          console.log(
-            "in TOGGLE_COMPLETED",
-            todo.id,
-            action.payload,
-            todo.completed
-          );
           if (todo.id === action.payload) {
             return {
               ...todo,
