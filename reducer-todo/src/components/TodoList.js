@@ -8,7 +8,7 @@ import Todo from "./Todo";
 
 const TodoList = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
+  //console.log(state);
   return (
     <>
       <TodoForm state={state} dispatch={dispatch}/>

@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from 'react';
-import { initialState, reducer } from '../reducers';
 import { ADD_TODO } from '../actions';
 
 const TodoForm = props => {
@@ -13,7 +12,6 @@ const handleSubmit = e => {
     e.preventDefault();
     props.dispatch({type: ADD_TODO, payload: newTodo});
     setNewTodo('');
-
 }
     return(
         <div>
