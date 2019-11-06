@@ -15,3 +15,8 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.completed {
+  background-color: aquamarine;
+  text-decoration: line-through;
+}
