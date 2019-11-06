@@ -2,17 +2,24 @@ import React, { useReducer } from "react";
 import { reducer, initialState } from "../reducers";
 
 //Components
+import TodoForm from './TodoForm';
 import Todo from "./Todo";
 
+
 const TodoList = () => {
-  const [{ todos }, dispatch] = useReducer(reducer, initialState);
-  console.log(todos);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(state);
   return (
-    <ul>
-      {todos.map(item => (
-        <Todo key={item.id} {...item}/>
-      ))}
-    </ul>
+    <>
+      <TodoForm state={state} dispatch={dispatch}/>
+      <div>
+        <ul>
+          {state.todos.map(item => (
+            <Todo key={item.id} {...item} dispatch={dispatch} />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

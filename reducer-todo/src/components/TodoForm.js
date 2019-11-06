@@ -1,17 +1,28 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { initialState, reducer } from '../reducers';
 import { ADD_TODO } from '../actions';
 
-const TodoForm = () => {
-const [state, dispatch] = useReducer(reducer, initialState);
-console.log('TodoForm', state)
+const TodoForm = props => {
+console.log('TodoForm', props)
+const [newTodo, setNewTodo] = useState('');
+const handleChanges = e => {
+setNewTodo(e.target.value);
+};
+
+const handleSubmit = e => {
+    e.preventDefault();
+    props.dispatch({type: ADD_TODO, payload: newTodo});
+    setNewTodo('');
+
+}
     return(
         <div>
         <input
         type="text"
-        // value={}
+        onChange={handleChanges}
+        value={newTodo}
         />
-        <button onClick={() => dispatch({type: ADD_TODO})}>Add</button>
+        <button onClick={handleSubmit}>Add</button>
 </div>
     )
 };
